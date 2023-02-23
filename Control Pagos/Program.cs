@@ -1,8 +1,12 @@
+using Control_Pagos.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+var connectionString = builder.Configuration.GetConnectionString("conexion");
+builder.Services.AddDbContext<PaycontroldbContext>(options => options.UseMySQL(connectionString));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

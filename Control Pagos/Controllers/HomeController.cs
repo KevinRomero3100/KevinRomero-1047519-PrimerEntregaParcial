@@ -20,6 +20,7 @@ namespace Control_Pagos.Controllers
 
         public IActionResult Privacy()
         {
+            //
             return View();
         }
 
